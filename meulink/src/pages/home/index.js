@@ -5,7 +5,8 @@ import './home.css'; // importando o css
 import Menu from '../../components/Menu'; // chamando o menu
 import LinkItem from '../../components/LinkItem';
 
-import api from "../../services/api" 
+import api from "../../services/api"; 
+import { saveLink } from '../../services/storeLinks';
 
 export default function Home() {
   const [link, setLink] = useState(''); 
@@ -20,6 +21,8 @@ export default function Home() {
 
       setData(response.data); 
       setShowModal(true);
+
+      saveLink('@encurtaLink', response.data)
 
       setLink(''); /* no tt estava sem ; */
 

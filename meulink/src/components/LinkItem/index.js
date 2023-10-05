@@ -9,8 +9,6 @@ export default function LinkItem({closeModal, content}) {
         alert("URL Copiada com sucesso!");
     }
 
-
-
     return (
       <div className="modal-container">
 
