@@ -24,8 +24,7 @@ export default function Links() {
 
       setMyLinks(result); 
     }
-
-    getLinks(); 
+       getLinks(); 
 
   }, [])
 
@@ -46,6 +45,7 @@ export default function Links() {
 
   return (
     <div className="links-container">
+
       <div className="links-header">
         <Link to="/">
           {/* parametro TO leva até a pagina home que é a / */}
@@ -53,6 +53,12 @@ export default function Links() {
         </Link>
         <h1>Meus Links</h1>
       </div>
+
+      { emptyList && (
+        <div className="links-item"> 
+           <h2 className="empty-text">Voce não tem um link!</h2>
+        </div>
+      )}
 
       { myLinks.map(link => (
         <div key={link.id} className="links-item">
